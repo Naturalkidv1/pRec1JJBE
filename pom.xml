@@ -10,4 +10,5 @@
         <maven.compiler.target>11</maven.compiler.target>
         <exec.mainClass>conexion.prec1juanjosebazanespinosa.PRec1JuanJoseBazanEspinosa</exec.mainClass>
     </properties>
+    <name>pRec1JJBE(V2)</name>
 </project>
