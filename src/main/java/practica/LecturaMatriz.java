@@ -12,6 +12,7 @@ public class LecturaMatriz {
 
     private static String[] tokens;
     private static String linea;
+    public static String[][] matriz; 
 
     public static int calcularColumna(String nombreFichero) {
 
@@ -74,7 +75,7 @@ public class LecturaMatriz {
         int j = 0;
         // Variables para guardar los datos que se van leyendo
 
-        String[][] matriz = new String[calcularFila(idFichero)][calcularColumna(idFichero)];
+        LecturaMatriz.matriz = new String[calcularFila(idFichero)][calcularColumna(idFichero)];
 
         System.out.println("Leyendo el fichero: " + idFichero);
 
@@ -100,13 +101,7 @@ public class LecturaMatriz {
 
             }
 
-            //MostraMatriz
-            for (int l = 0; l < matriz.length; l++) {
-                System.out.println("");
-                for (int k = 0; k < matriz[l].length; k++) {
-                    System.out.print(matriz[l][k] + " ");
-                }
-            }
+            
 
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
@@ -114,4 +109,19 @@ public class LecturaMatriz {
 
     }
 
+    public static void mostrarMatriz(){
+        
+        //MostraMatriz
+            for (int l = 0; l < matriz.length; l++) {
+                System.out.println("");
+                for (int k = 0; k < matriz[l].length; k++) {
+                    System.out.print(matriz[l][k] + " ");
+                }
+            }
+        
+        
+    }
+    
+    
+    
 }

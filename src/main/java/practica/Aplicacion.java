@@ -45,10 +45,12 @@ public class Aplicacion {
                     //System.out.println(LecturaMatriz.calcularColumna("matrizP.txt"));
                     //System.out.println(LecturaMatriz.calcularFila("matrizP.txt"));
                     LecturaMatriz.lectura("matrizP.txt");
+                    LecturaMatriz.mostrarMatriz();
                     break;
                 case 2:
                     //System.out.println(LecturaMatriz.calcularColumna("matrizP.txt"));
                     //System.out.println(LecturaMatriz.calcularFila("matrizP.txt"));
+                    LecturaMatriz.lectura("matrizP.txt");
                     LecturaMatrizEspejo.lecturaEspejo("matrizP.txt");
                     break;
                 case 3:

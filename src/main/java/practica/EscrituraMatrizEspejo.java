@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Scanner;
 import static practica.LecturaMatriz.calcularColumna;
 import static practica.LecturaMatriz.calcularFila;
-import static practica.LecturaMatrizEspejo.matriz;
 
 /**
  *
@@ -37,7 +36,7 @@ public class EscrituraMatrizEspejo {
 
         System.out.println("Leyendo el fichero: " + idFichero);
 
-        try (Scanner datosFichero = new Scanner(new File(idFichero))) {
+        try ( Scanner datosFichero = new Scanner(new File(idFichero))) {
             // hasNextLine devuelve true mientras haya líneas por leer
             while (datosFichero.hasNextLine()) {
                 // Guarda la línea completa en un String
@@ -72,11 +71,19 @@ public class EscrituraMatrizEspejo {
     }
 
     public static void escribirMatrizEspejo(String nombreFichero, List<String> datos) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nombreFichero))) {
+        try ( BufferedWriter bw = new BufferedWriter(new FileWriter(nombreFichero))) {
             for (String string : datos) {
-                bw.write(string);
-                bw.newLine();
+                
+                if (string.equals(LecturaMatriz.matriz.length - 1)) {
+                    bw.write(string);
+                } else {
+                    //Para separar
+                    bw.write(string + "\t");
+                }
+
+                //bw.newLine();
             }
+
             bw.flush();
         } catch (IOException e) {
             e.printStackTrace();

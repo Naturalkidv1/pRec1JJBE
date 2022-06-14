@@ -18,7 +18,7 @@ public class LecturaMatrizEspejo {
 
     private static String[] tokens;
     private static String linea;
-    public static String[][] matriz;
+    public static String[][] matrizEspejo;
 
     public static void lecturaEspejo(String nombreFichero) {
 
@@ -28,8 +28,10 @@ public class LecturaMatrizEspejo {
         int i = 0;
         int j = 0;
         // Variables para guardar los datos que se van leyendo
+        
+        String[][] matriz = LecturaMatriz.matriz;
 
-        matriz = new String[calcularFila(idFichero)][calcularColumna(idFichero)];
+        matrizEspejo = new String[calcularFila(idFichero)][calcularColumna(idFichero)];
 
         System.out.println("Leyendo el fichero: " + idFichero);
 
@@ -46,10 +48,10 @@ public class LecturaMatrizEspejo {
                 tokens = linea.split("\n");
                 tokens = linea.split(",");
 
-                for (int z = tokens.length - 1; z >= 0; z--) {
+                for (int z = 0; z >= 0; z++) {
 
                     //System.out.println(z);
-                    matriz[i][z] = tokens[z];
+                    matrizEspejo[i][matriz[0].length - 1 - j] = tokens[z];
 
                 }
                 i++;
